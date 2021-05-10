@@ -6,3 +6,6 @@ console.log(data.toString());
 let wdata ='demo text I wanna add to a file thats gonna be created using a jsmodule';
 //we'll use writefilesync which is an object of fs module
 fs.writeFileSync('write.txt',wdata);
+//using writefilesync again to edit data in write.txt file will erase previous data
+//hence, we'll use appendfile sync to add data 
+fs.appendFileSync('write.txt','\nthis is the data I wanted to append');

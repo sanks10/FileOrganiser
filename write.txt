@@ -1,1 +1,2 @@
 demo text I wanna add to a file thats gonna be created using a jsmodule
+this is the data I wanted to append
