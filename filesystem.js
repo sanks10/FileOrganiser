@@ -9,3 +9,5 @@ fs.writeFileSync('write.txt',wdata);
 //using writefilesync again to edit data in write.txt file will erase previous data
 //hence, we'll use appendfile sync to add data 
 fs.appendFileSync('write.txt','\nthis is the data I wanted to append');
+//unlinkSync will be used to delete a file
+fs.unlinkSync('abc.txt');
