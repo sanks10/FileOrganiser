@@ -12,5 +12,7 @@ fs.appendFileSync('write.txt','\nthis is the data I wanted to append');
 //unlinkSync will be used to delete a file
 //fs.unlinkSync('abc.txt');
 //creating a folder using js
-fs.mkdirSync('folder');
-
+//fs.mkdirSync('folder');
+//check if a file is already present using existsSync(path)
+console.log(fs.existsSync('git.md'));
+//returns true...this means git.md file exists on my vscode
