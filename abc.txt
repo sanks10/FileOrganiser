@@ -1,0 +1,1 @@
+The text which is gonna be read using an object of a module in js from another file.
