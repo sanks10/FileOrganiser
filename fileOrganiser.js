@@ -1,4 +1,5 @@
 let fs=require('fs');
+//const { unlink } = require('fs/promises');
 let path=require('path');
 let input = process.argv.slice(2);
 //console.log(input);
@@ -10,10 +11,21 @@ let Extensions = {
     "Images":[".gif",".img",".png",".jpg",".jpeg"],
     "Video": [".mp4"],
     "Audio": [".mp3"],
-    "Applications": [".exe"],
-    "Others":[".json"]
+    "Applications": [".exe",".app"],
+    "Others":[".json",".pem"]
 }
 let ExtFolderPath=folderPath;
+
+function moveFile(content,folderPath){
+    let srcFilePath=path.join(folderPath,content);
+    let DestFilePath=path.join(ExtFolderPath,content);
+    // fs.copyFileSync(srcFilePath,DestFilePath);
+    // fs.unlinkSync(srcFilePath);
+    console.log(srcFilePath,'    ' , DestFilePath);
+    fs.renameSync(srcFilePath,DestFilePath);
+    
+    
+}
 function createfolder(){
     fs.mkdirSync(ExtFolderPath);
 
@@ -40,7 +52,11 @@ for(let i=0;i<c.length;i++){
 //folder and classified them in their types.
 
     if(ExtFolderExists==false){
-        createfolder()
+        createfolder();
+        moveFile(c[i],folderPath);
+    }
+    else{
+        moveFile(c[i],folderPath);
     }
 }
-//this creates folders according to keys
+
